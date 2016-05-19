@@ -1,0 +1,5 @@
+sudo docker run --name ds1-elasticsearch -d -p 9200:9200 -p 9300:9300 -v "$PWD/elasticsearch":/usr/share/elasticsearch elasticsearch
+
+sudo docker run --name ds1-kibana -d -p 5601:5601 -v "$PWD/kibana":/usr/share/kibana -e ELASTICSEARCH_URL=http://localhost:9200 kibana
+
+sudo docker run -name ds1-nginx -d -p 8080:8080 -v "$PWD/nginx":/etc/nginx nginx
