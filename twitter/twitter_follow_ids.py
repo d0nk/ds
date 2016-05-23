@@ -28,7 +28,7 @@ class TweetStreamListener(StreamListener):
         
         dump = json.dumps(body)
         
-        with open ('twitter_output.json', 'a') as f:
+        with open ('prd_twitter_output.txt', 'a') as f:
             f.write(dump)
         return True
         
@@ -40,4 +40,4 @@ if __name__ == '__main__':
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     stream = Stream(auth, listener)
-    stream.filter(follow=['23489783','23466665','23564666') 
+    stream.filter(follow=['23489783','23466665','23564666') # these are not real IDs 
